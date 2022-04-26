@@ -1,6 +1,6 @@
 //declared variables
 var shake;
-let side = 10;
+let side = 0;
 
 function setup() {
   // put setup code here
@@ -75,8 +75,19 @@ function draw() {
   bezierVertex(1310, 550, 1300, 400, 1310, 420);
   bezierVertex(1310, 420, 1200, 400, 1090, 400);
   endShape();
-  fill("#7E34E0");
-  square(mouseX, mouseY, side);
+  fill("#FA1C3A");
+  noStroke();
+  //start of expanding star
+  beginShape();
+  vertex(mouseX-10-side, mouseY+10+side);
+  vertex(mouseX, mouseY+35+side);
+  vertex(mouseX+10+side, mouseY+10+side);
+  vertex(mouseX+35+side, mouseY);
+  vertex(mouseX+10+side, mouseY-8-side);
+  vertex(mouseX, mouseY-35-side);
+  vertex(mouseX-10-side, mouseY-8-side);
+  vertex(mouseX-35-side, mouseY);
+  endShape();
 }
 //change size of cursor and shake the screen
 function mousePressed(){
