@@ -93,7 +93,7 @@ function draw() {
 function mousePressed(){
   side = side + 5;
   if(side==50){
-    side=10
+    side=0
   }
   if(shake==true){
     shake=false;
